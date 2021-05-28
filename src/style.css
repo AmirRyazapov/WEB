@@ -1,19 +1,143 @@
-body
+@import 'https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&cache=clear';
+header
 {
-	background-color: #FFC0CB;
+	position: relative;
+	width: 1180px;
+	height: 40px;
 }
 
-.heading
+.Ellipse
 {
-	color: red;
-	font-size: 40px;
-	text-align:  center;
-	border: 4px solid #000;
-	background-color: #98FB98;
+	position: absolute;
+	right: 80.14%;
+	top: 0%;
+	bottom: 0%;
 }
 
-.paragraph
+.Red
 {
-	font-size: 22px;
-	margin-left: 20px;
+	background: #E5261E;
+}
+
+
+.Ellipse.Red
+{
+	height: 36px;
+	width: 36.14725112915039px;
+	left: 0px;
+	top: 0px;
+	border-radius: 36.15px/36px;
+}
+
+.Vector
+{
+	position: absolute;
+	left: 8px;
+	top: 1px;
+	border-top: 17.5px solid transparent;
+	border-left: 29px solid #FFFFFF;
+	border-bottom: 17.5px solid transparent;
+}
+
+.Text
+{
+	position: absolute;
+	height: 24px;
+	width: 134px;
+	left: 48px;
+	top: 6px;
+	
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+.Gray1
+{
+	color: #333333;
+}
+
+.input-search
+{
+	position: absolute;
+	height: 25px;
+	width: 320px;
+	left: 389px;
+	top: 11px;
+	border: none;
+	border-radius: 0px;
+	
+	font-family: Rubik;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 400;
+}
+
+.input-search:focus
+{
+	color: #333333;
+	font-weight: 500;
+}
+
+.Gray3
+{
+	color: #828282;
+}
+
+.line
+{
+	position: absolute;
+	width: 320px;
+	left: 389px;
+	top: 36px;
+	border: 1px solid #333333
+}
+
+.search
+{
+	position: absolute;
+	height: 19px;
+	width: 50px;
+	left: 741px;
+	top: 11px;
+	
+	font-family: Rubik;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 19px;
+	background-color: #FFFFFF;
+	border: none;
+	color: #E5261E;
+	cursor: pointer;
+	padding: 0;
+}
+
+.enter
+{
+	position: absolute;
+	height: 38px;
+	width: 113px;
+	left: 1067px;
+	top: 2px;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	
+	color: #FFFFFF;
+	font-family: Rubik;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 19px;
+	letter-spacing: 0em;
+	text-align: center;
+}
+
+.enter:hover
+{
+	background: #CC221B;
 }
