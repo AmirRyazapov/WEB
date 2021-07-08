@@ -6,17 +6,229 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src = "src/script.js"></script>
     <link rel = "stylesheet" type = "text/css" href = "src/style.css"/>
 </head>
 <body>
-    <header>
-		<div class = "Ellipse Red"></div>
-		<div class = "Vector"></div>
-		<div class = "Text Gray1">Видеосервис</div>
-		<input type = "text" class = "input-search Gray3" placeholder = "Поиск...">
-		<div class = "line"></div>
-		<button type = "submit" class = "search">Найти</button>
-		<button type = "submit" class = "enter Red">Войти</button>
+    <header class = "center">
+		<div class = "logo">
+			<div class = "logo-image">
+				<div class = "logo-image-vector"></div>
+			</div>
+			<div class = "logo-name">Видеосервис</div>
+		</div>
+		<div class = "search">
+			<input type = "text" class = "search-input" placeholder = "Поиск...">
+			<button type = "submit" class = "search-button">Найти</button>
+		</div>
+		<button type = "submit" class = "login" id = "enter_to_site" onclick = "handleButtonClick()">Войти</button>
 	</header>
+	<main class = "center">
+		<div class = "tabs">
+			<div class = "tab" id = "films" onclick = "filmsClick()">
+				Фильмы
+			</div> 
+			<div class = "tab" id = "tv-chanels" onclick = "channelsClick()">
+				Телеканалы
+			</div>
+		</div>
+		<div class = "page_with_films">
+			<div class = "new">
+				🔥 Новинки
+			</div>
+			<div class = "films">
+				<div class = "new-films-div">
+					<img class = "new-films" src = "src/images/cartoon.png" width = "100%">
+					Мульт в кино. Выпуск №103. Некогда грустить!
+				</div>
+				<div class = "new-films-div">
+					<img class = "new-films" src = "src/images/batman.png" width = "100%">
+					Новый Бэтмен
+				</div>
+				<div class = "new-films-div">
+					<div class = "about-film" id = "2">
+						Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». 
+						Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.
+					</div>
+					<img class = "new-films" src = "src/images/hollywood.png" width = "100%" id = "1">
+					Однажды... в Голливуде
+				</div>
+				<div class = "new-films-div">
+					<img class = "new-films" src = "src/images/strippers.png" width = "100%">
+					Стриптизёрши
+				</div>
+			</div>
+			<div class = "genres">
+				Жанры
+			</div>
+			<div class = "genress">
+				<div class = "genre1 genresss">😁<div class = "name-of-genre">Комедии</div></div>
+				<div class = "genre2 genresss">😭<div class = "name-of-genre">Драмы</div></div>
+				<div class = "genre3 genresss">👽<div class = "name-of-genre">Фантастика</div></div>
+				<div class = "genre4 genresss">👻<div class = "name-of-genre">Ужасы</div></div>
+			</div>
+		</div>
+		<div class = "page_with_channels">
+			<div class = "block_with_channel">
+				<div class = "block_with_logo">
+					<img class = "logo-channel" src = "src/images/first.png" width = "49px">
+				</div>
+				<div class = "program">
+					<div class = "logo-name channel-name">
+						Первый канал
+					</div>
+					<div class = "next_program">
+						<div class = "time first_program">
+							13:00
+						</div>
+						<div class = "program_title first_program">
+							Новости (с субтитрами)
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							14:00
+						</div>
+						<div class = "program_title">
+							Давай поженимся
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							15:00
+						</div>
+						<div class = "program_title">
+							Другие новости
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "block_with_channel">
+				<div class = "block_with_logo">
+					<img class = "logo-channel" src = "src/images/2x2.png" width = "114px">
+				</div>
+				<div class = "program">
+					<div class = "logo-name channel-name">
+						2x2
+					</div>
+					<div class = "next_program">
+						<div class = "time first_program">
+							13:00
+						</div>
+						<div class = "program_title first_program">
+							МУЛЬТ ТВ. Сезон 4, 7 серия
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							14:00
+						</div>
+						<div class = "program_title">
+							ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							15:00
+						</div>
+						<div class = "program_title">
+							БУРДАШЕВ. Сезон 1, 20 серия
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "block_with_channel">
+				<div class = "block_with_logo">
+					<img class = "logo-channel" src = "src/images/rbc.png" width = "54px">
+				</div>
+				<div class = "program">
+					<div class = "logo-name channel-name">
+						РБК
+					</div>
+					<div class = "next_program">
+						<div class = "time first_program">
+							13:00
+						</div>
+						<div class = "program_title first_program">
+							ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							14:00
+						</div>
+						<div class = "program_title">
+							ДЕНЬ. Главные темы
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							15:00
+						</div>
+						<div class = "program_title">
+							Главные новости
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class = "block_with_channel">
+				<div class = "block_with_logo">
+					<img class = "logo-channel" src = "src/images/amedia.png" width = "64px">
+				</div>
+				<div class = "program">
+					<div class = "logo-name channel-name">
+						AMEDIA PREMIUM
+					</div>
+					<div class = "next_program">
+						<div class = "time first_program">
+							13:00
+						</div>
+						<div class = "program_title first_program">
+							Клиент всегда мёртв
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							14:00
+						</div>
+						<div class = "program_title">
+							Голодные игры: Сойка-пересмешница. Часть I
+						</div>
+					</div>
+					<div class = "next_program">
+						<div class = "time">
+							15:00
+						</div>
+						<div class = "program_title">
+							Секс в большом городе
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "autorization center">
+			<div class = "tab" id = "enter">Вход</div>
+			<form name = "autoriz" onsubmit = enterToSite()>
+				<input type = "text" class = "search-input" id = "login" name = "login" placeholder = "Логин">
+				<input type = "password" class = "search-input" id = "password" name = "password" placeholder = "Пароль">
+				<input type = "checkbox" class = "check">
+				<div class = "remember">
+					Запомнить
+				</div>
+				<button type = "submit" class = "login" id = "enter_button">Войти</button>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<div class = "logo-footer">
+			<img src = "src/images/logo-footer.png" width = "32" height = "64">
+		</div>
+		<div class = "footer-text">
+			<p>426057, Россия, Удмуртская Республика, г. Ижевск, ул. Карла Маркса, 246 (ДК «Металлург»)</p>
+			<p>+7 (3412) 93-88-61, 43-29-29</p>
+			<p><a href = "https://htc-cs.ru/" class = "footer-text link-main">htc-cs.ru</a></p>
+		</div>
+	</footer>
+</body>
 </html>
