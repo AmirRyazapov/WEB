@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Rubik:400,500,700,900&cache=clear';
-* {
+* 
+{
 	margin: 0;
 	padding: 0;
 }
@@ -7,6 +8,21 @@
 html
 {
 	overflow-x: hidden;
+}
+
+ul
+{
+	display: inline-block;
+	position: relative;
+}
+
+li
+{
+	display: inline-block;
+	position: relative;
+	list-style-type: none;
+	font-family: Rubik;
+	font-style: normal;
 }
 
 .center
@@ -76,6 +92,10 @@ header
 
 .search
 {
+	display: inline-block;
+	position: relative;
+	font-family: Rubik;
+	font-style: normal;
 	flex-basis: 33.3%;
 	display: flex;
 	width: 34%;
@@ -338,10 +358,30 @@ main
 
 .page_with_channels
 {
+	overflow-y: scroll;
 	top: 27px;
 	position: relative;
 	display: none;
 	flex-direction: column;
+	height: 696px;
+}
+
+::-webkit-scrollbar  
+{
+	width: 8px;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background: #BDBDBD;
+	border-radius: 2px;
+	width: 4px;
+}
+
+::-webkit-scrollbar-track-piece
+{
+	border-radius: 2px;
+	background: #F2F2F2;
 }
 
 .block_with_channel
@@ -350,8 +390,14 @@ main
 	background: #F2F2F2;
 	border-radius: 8px;
 	margin-bottom: 16px;
+	margin-right: 10px;
 	display: flex;
 	flex-direction: row;
+}
+
+.block_with_channel:last-child
+{
+	margin-bottom: 0px;
 }
 
 .block_with_logo
@@ -512,4 +558,30 @@ p
 {
 	color: #1F4766;
 	cursor: pointer;
+}
+
+.blackout
+{
+	background: #333333;
+	position: absolute;
+	z-index: -100;
+	opacity: 0;
+}
+
+.name_of_user
+{
+	font-size: 16px;
+	line-height: 19px;
+	top: 12px;
+	left: 5%;
+	flex-basis: 21.4%;
+	text-align: right;
+}
+
+#exit
+{
+	top: 12px;
+	width: 52px;
+	flex-basis: 7%;
+	text-align: right;
 }

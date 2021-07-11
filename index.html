@@ -18,195 +18,229 @@
 			</div>
 			<div class = "logo-name">Видеосервис</div>
 		</div>
-		<div class = "search">
-			<input type = "text" class = "search-input" placeholder = "Поиск...">
+		<form class = "search" name = "search_films" onsubmit = searchFilms()>
+			<input type = "text" class = "search-input" name = "search_films_input" placeholder = "Поиск...">
 			<button type = "submit" class = "search-button">Найти</button>
-		</div>
+		</form>
 		<button type = "submit" class = "login" id = "enter_to_site" onclick = "handleButtonClick()">Войти</button>
 	</header>
 	<main class = "center">
-		<div class = "tabs">
-			<div class = "tab" id = "films" onclick = "filmsClick()">
+		<ul class = "tabs">
+			<li class = "tab" id = "films" onclick = "filmsClick()">
 				Фильмы
-			</div> 
-			<div class = "tab" id = "tv-chanels" onclick = "channelsClick()">
+			</li> 
+			<li class = "tab" id = "tv-chanels" onclick = "channelsClick()">
 				Телеканалы
-			</div>
-		</div>
+			</li>
+		</ul>
 		<div class = "page_with_films">
 			<div class = "new">
 				🔥 Новинки
 			</div>
-			<div class = "films">
-				<div class = "new-films-div">
+			<ul class = "films">
+				<li class = "new-films-div">
 					<img class = "new-films" src = "src/images/cartoon.png" width = "100%">
 					Мульт в кино. Выпуск №103. Некогда грустить!
-				</div>
-				<div class = "new-films-div">
+				</li>
+				<li class = "new-films-div">
 					<img class = "new-films" src = "src/images/batman.png" width = "100%">
 					Новый Бэтмен
-				</div>
-				<div class = "new-films-div">
+				</li>
+				<li class = "new-films-div">
 					<div class = "about-film" id = "2">
 						Фильм повествует о череде событий, произошедших в Голливуде в 1969 году, на закате его «золотого века». 
 						Известный актер Рик Далтон и его дублер Клифф Бут пытаются найти свое место в стремительно меняющемся мире киноиндустрии.
 					</div>
 					<img class = "new-films" src = "src/images/hollywood.png" width = "100%" id = "1">
 					Однажды... в Голливуде
-				</div>
-				<div class = "new-films-div">
+				</li>
+				<li class = "new-films-div">
 					<img class = "new-films" src = "src/images/strippers.png" width = "100%">
 					Стриптизёрши
-				</div>
-			</div>
+				</li>
+			</ul>
 			<div class = "genres">
 				Жанры
 			</div>
-			<div class = "genress">
-				<div class = "genre1 genresss">😁<div class = "name-of-genre">Комедии</div></div>
-				<div class = "genre2 genresss">😭<div class = "name-of-genre">Драмы</div></div>
-				<div class = "genre3 genresss">👽<div class = "name-of-genre">Фантастика</div></div>
-				<div class = "genre4 genresss">👻<div class = "name-of-genre">Ужасы</div></div>
-			</div>
+			<ul class = "genress">
+				<li class = "genre1 genresss">😁<div class = "name-of-genre">Комедии</div></li>
+				<li class = "genre2 genresss">😭<div class = "name-of-genre">Драмы</div></li>
+				<li class = "genre3 genresss">👽<div class = "name-of-genre">Фантастика</div></li>
+				<li class = "genre4 genresss">👻<div class = "name-of-genre">Ужасы</div></li>
+			</ul>
 		</div>
-		<div class = "page_with_channels">
-			<div class = "block_with_channel">
+		<ul class = "page_with_channels">
+			<li class = "block_with_channel">
 				<div class = "block_with_logo">
 					<img class = "logo-channel" src = "src/images/first.png" width = "49px">
 				</div>
-				<div class = "program">
-					<div class = "logo-name channel-name">
+				<ul class = "program">
+					<li class = "logo-name channel-name">
 						Первый канал
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time first_program">
 							13:00
 						</div>
 						<div class = "program_title first_program">
 							Новости (с субтитрами)
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							14:00
 						</div>
 						<div class = "program_title">
 							Давай поженимся
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							15:00
 						</div>
 						<div class = "program_title">
 							Другие новости
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class = "block_with_channel">
+					</li>
+				</ul>
+			</li>
+			<li class = "block_with_channel">
 				<div class = "block_with_logo">
 					<img class = "logo-channel" src = "src/images/2x2.png" width = "114px">
 				</div>
-				<div class = "program">
-					<div class = "logo-name channel-name">
+				<ul class = "program">
+					<li class = "logo-name channel-name">
 						2x2
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time first_program">
 							13:00
 						</div>
 						<div class = "program_title first_program">
 							МУЛЬТ ТВ. Сезон 4, 7 серия
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							14:00
 						</div>
 						<div class = "program_title">
 							ПОДОЗРИТЕЛЬНАЯ СОВА. Сезон 7, 7 серия
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							15:00
 						</div>
 						<div class = "program_title">
 							БУРДАШЕВ. Сезон 1, 20 серия
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class = "block_with_channel">
+					</li>
+				</ul>
+			</li>
+			<li class = "block_with_channel">
 				<div class = "block_with_logo">
 					<img class = "logo-channel" src = "src/images/rbc.png" width = "54px">
 				</div>
-				<div class = "program">
-					<div class = "logo-name channel-name">
+				<ul class = "program">
+					<li class = "logo-name channel-name">
 						РБК
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time first_program">
 							13:00
 						</div>
 						<div class = "program_title first_program">
 							ДЕНЬ. Горючая смесь: как бороться с суррогатом на АЗС
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							14:00
 						</div>
 						<div class = "program_title">
 							ДЕНЬ. Главные темы
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							15:00
 						</div>
 						<div class = "program_title">
 							Главные новости
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class = "block_with_channel">
+					</li>
+				</ul>
+			</li>
+			<li class = "block_with_channel">
 				<div class = "block_with_logo">
 					<img class = "logo-channel" src = "src/images/amedia.png" width = "64px">
 				</div>
-				<div class = "program">
-					<div class = "logo-name channel-name">
+				<ul class = "program">
+					<li class = "logo-name channel-name">
 						AMEDIA PREMIUM
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time first_program">
 							13:00
 						</div>
 						<div class = "program_title first_program">
 							Клиент всегда мёртв
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							14:00
 						</div>
 						<div class = "program_title">
 							Голодные игры: Сойка-пересмешница. Часть I
 						</div>
-					</div>
-					<div class = "next_program">
+					</li>
+					<li class = "next_program">
 						<div class = "time">
 							15:00
 						</div>
 						<div class = "program_title">
 							Секс в большом городе
 						</div>
-					</div>
+					</li>
+				</ul>
+			</li>
+			<li class = "block_with_channel">
+				<div class = "block_with_logo">
+					<img class = "logo-channel" src = "src/images/noname.png" height = "64px">
 				</div>
-			</div>
-		</div>
+				<ul class = "program">
+					<li class = "logo-name channel-name">
+						???
+					</li>
+					<li class = "next_program">
+						<div class = "time first_program">
+							13:00
+						</div>
+						<div class = "program_title first_program">
+							???
+						</div>
+					</li>
+					<li class = "next_program">
+						<div class = "time">
+							14:00
+						</div>
+						<div class = "program_title">
+							???
+						</div>
+					</li>
+					<li class = "next_program">
+						<div class = "time">
+							15:00
+						</div>
+						<div class = "program_title">
+							???
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
 		<div class = "autorization center">
 			<div class = "tab" id = "enter">Вход</div>
 			<form name = "autoriz" onsubmit = enterToSite()>

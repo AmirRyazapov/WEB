@@ -14,17 +14,12 @@ document.onreadystatechange = function ()
 {
 	if (document.readyState == "complete")
 	{
-		
 		let div = document.createElement('div');
 		div.className = "blackout";
-		div.style.background = "#333333";
-		div.style.position = "absolute";
 		let wid = document.documentElement.scrollWidth;
 		let heig = document.documentElement.scrollHeight;
 		div.style.width = wid + "px";
 		div.style.height = heig + "px";
-		div.style.zIndex = "-100";
-		div.style.opacity = "0";
 		
 		let head = document.getElementsByTagName("header");
 		head[0].before(div);
@@ -42,12 +37,7 @@ document.addEventListener("DOMContentLoaded", function(event)
 		
 		let div = document.createElement('div');
 		div.className = "name_of_user logo-name";
-		div.style.fontSize = "16px";
-		div.style.lineHeight = "19px";
-		div.style.top = "12px";
-		div.style.left = "5%";
-		div.style.flexBasis = "21.4%";
-		div.style.textAlign = "right";
+		
 		if (localStorage.getItem('login').length > 14)
 		{
 			div.innerHTML = localStorage.getItem('login').substring(0, 14) + "...";
@@ -61,17 +51,19 @@ document.addEventListener("DOMContentLoaded", function(event)
 		div2.className = "search-button";
 		div2.id = "exit";
 		div2.addEventListener("click", exit, false);
-		div2.style.fontSize = "16px";
-		div2.style.lineHeight = "19px";
-		div2.style.top = "12px";
-		div2.style.left = "5%";
-		div2.style.width = "52px";
-		div2.style.flexBasis = "7%";
-		div2.style.textAlign = "right";
 		div2.innerHTML = "Выйти";
 		
 		button[0].before(div);
 		div.after(div2);
+	}
+	if (sessionStorage.getItem('films') !== null)
+	{
+		let a = sessionStorage.getItem('films');
+		let films = document.getElementsByClassName("new-films-div");
+		for (let i = 0; i < a.length; i++)
+		{
+			films[Number.parseInt(a[i])].style.visibility = "hidden";
+		}
 	}
     window.onresize = function()
 	{
@@ -140,7 +132,8 @@ function enterToSite()
 
 function exit()
 {
-	localStorage.clear();
+	localStorage.removeItem("login");
+	localStorage.removeItem("password");
 	let button = document.getElementsByClassName("login");
 	button[0].style.display = "block";
 	
@@ -149,4 +142,35 @@ function exit()
 	
 	let exit = document.getElementById("exit");
 	exit.style.display = "none";
+}
+
+function searchFilms()
+{
+	let input = document.search_films.search_films_input.value;
+	if (input != "")
+	{
+		let films = document.getElementsByClassName("new-films-div");
+		let str = "";
+		for (let i = 0; i < films.length; i++)
+		{
+			if (films[i].textContent.toLowerCase().indexOf(input.toLowerCase()) == -1)
+			{
+				str += i;
+				films[i].style.visibility = "hidden";
+			}
+			else
+			{
+				films[i].style.visibility = "visible";
+			}
+		}
+		sessionStorage.setItem("films", str);
+	}
+	else
+	{
+		let films = document.getElementsByClassName("new-films-div");
+		for (let i = 0; i < films.length; i++)
+		{
+			films[i].style.visibility = "visible";
+		}
+	}
 }
